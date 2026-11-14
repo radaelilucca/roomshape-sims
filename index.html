@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#edf4e9" />
+    <meta name="description" content="Gere formatos conectados de cômodos em uma malha de tiles." />
+    <title>Roomshape — Gerador de cômodos</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <main>
+      <button
+        class="board"
+        id="board"
+        type="button"
+        aria-keyshortcuts="G"
+        aria-label="Grade com formato de cômodo. Clique ou pressione G para gerar outro formato. Pressione S para configurações."
+      >
+        <span class="grid-canvas" id="grid-canvas" aria-hidden="true"></span>
+      </button>
+    </main>
+
+    <aside class="floating-card" aria-label="Atalhos e tiles da forma atual">
+      <p class="card-heading">ATALHOS</p>
+      <div class="shortcut-row"><kbd>G</kbd><span>Gerar novo formato</span></div>
+      <div class="shortcut-row"><kbd>S</kbd><span>Configurações</span></div>
+      <div class="card-divider"></div>
+      <div class="count-row" aria-live="polite" aria-atomic="true">
+        <span class="card-heading">FORMA ATUAL</span>
+        <span class="count-value"><strong id="tile-count">—</strong><span>tiles</span></span>
+      </div>
+    </aside>
+
+    <dialog class="settings-dialog" id="settings-dialog" aria-labelledby="settings-title">
+      <form id="settings-form" novalidate>
+        <div class="dialog-heading">
+          <div>
+            <p class="eyebrow">PREFERÊNCIAS</p>
+            <h1 id="settings-title">Tamanho dos cômodos</h1>
+          </div>
+          <button class="icon-button" id="close-settings" type="button" aria-label="Fechar configurações">×</button>
+        </div>
+
+        <p class="dialog-copy">Defina o tamanho dos formatos e quantas células cabem na grade.</p>
+
+        <p class="settings-section-title">QUANTIDADE DE TILES</p>
+        <div class="range-fields">
+          <label class="number-field" for="min-tiles">
+            <span>Mínimo de tiles</span>
+            <input id="min-tiles" name="minTiles" type="number" min="1" max="200" step="1" inputmode="numeric" required />
+          </label>
+          <span class="range-separator" aria-hidden="true">—</span>
+          <label class="number-field" for="max-tiles">
+            <span>Máximo de tiles</span>
+            <input id="max-tiles" name="maxTiles" type="number" min="1" max="200" step="1" inputmode="numeric" required />
+          </label>
+        </div>
+
+        <p class="settings-section-title grid-section-title">DIMENSÕES DA GRADE</p>
+        <div class="dimension-fields">
+          <label class="number-field" for="grid-columns">
+            <span>Colunas</span>
+            <input id="grid-columns" name="columns" type="number" min="1" max="200" step="1" inputmode="numeric" required />
+          </label>
+          <label class="number-field" for="grid-rows">
+            <span>Linhas</span>
+            <input id="grid-rows" name="rows" type="number" min="1" max="200" step="1" inputmode="numeric" required />
+          </label>
+        </div>
+
+        <p class="field-note">A grade cabe na janela; o tamanho dos tiles se ajusta automaticamente. Use valores inteiros de 1 a 200.</p>
+
+        <div class="dialog-actions">
+          <button class="text-button" id="cancel-settings" type="button">Cancelar</button>
+          <button class="save-button" type="submit">Salvar intervalo</button>
+        </div>
+      </form>
+    </dialog>
+  </body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "name": "tiles-generator",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/generator.test.mjs"
+  }
+}
