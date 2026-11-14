@@ -22,16 +22,22 @@
       </button>
     </main>
 
-    <aside class="floating-card" aria-label="Atalhos e tiles da forma atual">
-      <p class="card-heading">ATALHOS</p>
-      <div class="shortcut-row"><kbd>G</kbd><span>Gerar novo formato</span></div>
-      <div class="shortcut-row"><kbd>S</kbd><span>Configurações</span></div>
-      <div class="card-divider"></div>
-      <div class="count-row" aria-live="polite" aria-atomic="true">
+    <button
+      class="floating-card"
+      id="open-settings"
+      type="button"
+      aria-haspopup="dialog"
+      aria-label="Atalhos e tiles da forma atual. Clique para abrir configurações."
+    >
+      <span class="card-heading">ATALHOS</span>
+      <span class="shortcut-row"><kbd>G</kbd><span>Gerar novo formato</span></span>
+      <span class="shortcut-row"><kbd>S</kbd><span>Configurações</span></span>
+      <span class="card-divider" aria-hidden="true"></span>
+      <span class="count-row" aria-live="polite" aria-atomic="true">
         <span class="card-heading">FORMA ATUAL</span>
         <span class="count-value"><strong id="tile-count">—</strong><span>tiles</span></span>
-      </div>
-    </aside>
+      </span>
+    </button>
 
     <dialog class="settings-dialog" id="settings-dialog" aria-labelledby="settings-title">
       <form id="settings-form" novalidate>

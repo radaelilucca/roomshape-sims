@@ -7,7 +7,7 @@ Build a small standalone browser app that generates varied, connected room footp
 ## User experience
 
 - Show the generated room centered on a subtle full-screen grid; the default cell size is about 40 CSS pixels and adjusts to fit configured dimensions.
-- Keep a compact floating card in the upper-right corner with the `G` and `S` shortcuts and the current room's tile count.
+- Keep a clickable floating card in the upper-right corner with the `G` and `S` shortcuts and the current room's tile count; clicking it opens settings.
 - Generate another room by clicking the grid or pressing `G`; open settings with the `S` key.
 - Validate integer limits from 1 to 200, require minimum to be no greater than maximum, and retain saved limits in local storage.
 - Let users set visible grid rows and columns from 1 to 200; resize every tile to fit the full configured grid within the window.

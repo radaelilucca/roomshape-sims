@@ -6,6 +6,7 @@ const DEFAULT_CELL_SIZE = 40;
 const board = document.querySelector("#board");
 const gridCanvas = document.querySelector("#grid-canvas");
 const tileCount = document.querySelector("#tile-count");
+const openSettingsButton = document.querySelector("#open-settings");
 const settingsDialog = document.querySelector("#settings-dialog");
 const settingsForm = document.querySelector("#settings-form");
 const minInput = document.querySelector("#min-tiles");
@@ -128,6 +129,7 @@ function isTextEntry(element) {
 }
 
 board.addEventListener("click", generateAndRender);
+openSettingsButton.addEventListener("click", openSettings);
 closeSettingsButton.addEventListener("click", closeSettings);
 cancelSettingsButton.addEventListener("click", closeSettings);
 settingsDialog.addEventListener("close", () => board.focus());
